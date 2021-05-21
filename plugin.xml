@@ -1,2 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-permission" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"><name>Permission</name><js-module name="Permission" src="www/Permission.js"><clobbers target="cordova.plugins.Permission" /></js-module><platform name="android"><config-file parent="/*" target="res/xml/config.xml"><feature name="Permission"><param name="android-package" value="cordova-plugin-permission.Permission" /></feature></config-file><config-file parent="/*" target="AndroidManifest.xml"></config-file><source-file src="src/android/Permission.java" target-dir="src/cordova-plugin-permission/Permission" /></platform></plugin>
+<plugin id="cordova-plugin-permission" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Permission</name>
+    <js-module name="Permission" src="www/Permission.js">
+        <clobbers target="PPermission"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="Permission">
+                <param name="android-package" value="org.apache.cordova.permission.Permission"/>
+            </feature>
+        </config-file>
+        <framework src="com.qw:soulpermission:1.3.0"/>
+        <source-file src="src/android/Permission.java" target-dir="src/org/apache/cordova/permission"/>
+    </platform>
+</plugin>
